@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.blog-container {
+  width: 100%;
+  padding: 50px 150px;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.postcard {
+  border: 1px solid white;
+  padding: 20px;
+}
+
+.hashtags {
+  display: flex;
+  gap: 15px;
+}
+
+.reactions {
+  display: flex;
+  gap: 10px;
+}
