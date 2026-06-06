@@ -17,16 +17,24 @@ const BlogForm = (props) => {
 
   const addBlog = () => {
     props.addBlog({ title, body });
+    setTitle("");
+    setBody("");
   };
 
   return (
     <div className="create-blog">
       <div className="blog-fields">
         <label htmlFor="">Title</label>
-        <input type="text" className="blog-title" onChange={handleTitle} />
+        <input
+          type="text"
+          value={title}
+          className="blog-title"
+          onChange={handleTitle}
+        />
       </div>
       <textarea
         name="blog-content"
+        value={body}
         className="blog-body"
         onChange={handleBody}
       ></textarea>
