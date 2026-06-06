@@ -7,11 +7,18 @@ import BlogForm from "./BlogForm.jsx";
 
 export default function BlogPosts() {
   let [blogs, setBlogs] = useState(postsData);
-  let [newBlog, setNewBlog] = useState({});
 
   const addBlogFunction = (blog) => {
     // console.log(blog);
     setBlogs([...blogs, blog]);
+  };
+
+  const deleteBlogFunction = (index) => {
+    // console.log(index);
+    const updateBlogs = blogs.filter(
+      (_, currentIndex) => currentIndex !== index,
+    );
+    setBlogs(updateBlogs);
   };
 
   return (
@@ -27,11 +34,10 @@ export default function BlogPosts() {
         {blogs.map((post, index) => (
           <PostCard
             key={index}
+            index={index}
             title={post.title}
             body={post.body}
-            tags={post.tags}
-            reactions={post.reactions}
-            views={post.views}
+            deleteBlog={deleteBlogFunction}
           />
         ))}
       </div>
